@@ -26,7 +26,9 @@ const actions = {
 		let proxy = config.proxy
 		const dataType = {
 			POST: 'data',
-			GET: 'params'
+			GET: 'params',
+			DELETE: 'params',
+			PUT: 'data'
 		}
 
 		Object.keys(urlParams).forEach(k => {
