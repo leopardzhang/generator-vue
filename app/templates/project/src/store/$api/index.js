@@ -2,6 +2,7 @@ import axios from 'axios'
 import baseURL from '@/config/baseUrl'
 
 axios.defaults.baseURL = baseURL;
+axios.defaults.headers.post['Content-Type'] = 'application/json'
 
 const state = {
 
