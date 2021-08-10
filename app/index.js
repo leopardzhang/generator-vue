@@ -49,6 +49,7 @@ module.exports = class extends Generator {
 	}
 
 	end() {
-		console.info('run -> npm install');
+		console.info(`run -> cd ${this.props.appName}`);
+		console.info(`run -> npm install`);
 	}
 }; 
