@@ -6,6 +6,16 @@ function resolve(dir) {
 }
 
 module.exports = {
+	css: {
+		loaderOptions: {
+			sass: {
+				additionalData: `
+					@import "@/common/scss/mixin.scss";
+					@import "@/common/scss/variable.scss";
+				`
+			}
+		}
+	},
 	publicPath: './',
 	chainWebpack: (config) => {
 			config.resolve.alias
