@@ -1,4 +1,3 @@
-const px2rem = require('postcss-px2rem');
 const path = require('path');
 
 function resolve(dir) {
@@ -9,7 +8,7 @@ module.exports = {
 	css: {
 		loaderOptions: {
 			sass: {
-				additionalData: `
+				data: `
 					@import "@/common/scss/mixin.scss";
 					@import "@/common/scss/variable.scss";
 				`
@@ -21,6 +20,6 @@ module.exports = {
 			config.resolve.alias
 				.set('@', resolve('src'))
 				.set('@assets', resolve('src/assets'))
-				.set('common', resolve('src/common'))
+				.set('@common', resolve('src/common'))
 		}
 }
