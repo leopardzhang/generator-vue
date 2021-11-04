@@ -11,7 +11,7 @@ const router = new Router({
 		component(resolve) {
 			require.ensure(['@/pages/$app/index.vue'], () => {
 				resolve(require('@/pages/$app/index.vue'));
-			});
+			}, 'static/pages/$app/index');
 		}
 	}, {
 		path: '/index',
@@ -19,7 +19,7 @@ const router = new Router({
 		component(resolve) {
 			require.ensure(['@/pages/index/index.vue'], () => {
 				resolve(require('@/pages/index/index.vue'));
-			});
+			}, 'static/pages/index/index');
 		}
 	}, {
 		path: '/*',
