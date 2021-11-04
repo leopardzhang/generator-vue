@@ -36,7 +36,7 @@ const actions = {
 
 			url = url.replace(reg, urlParams[k])
 		})
-		proxy[dataType[proxy.method]] = params;
+		proxy[dataType[proxy.method.toUpperCase()]] = params;
 
 		const response = await axios(Object.assign({}, proxy, {
 			url
