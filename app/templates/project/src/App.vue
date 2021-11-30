@@ -2,7 +2,7 @@
 	<div id="app">
 		<transition :name="transitionName">
 			<keep-alive>
-				<router-view class="base-router" />
+				<router-view class="base-route" />
 			</keep-alive>
 		</transition>
 	</div>
@@ -26,7 +26,7 @@ export default {
 	background: white;
 }
 
-.base-router {
+.base-route {
 	transition: all 0.29s ease-in-out;
 	will-change: transform;
 	position: absolute;

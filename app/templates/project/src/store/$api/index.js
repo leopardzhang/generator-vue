@@ -1,7 +1,8 @@
 import axios from 'axios'
 import baseURL from '@/config/baseUrl'
+import { ERR_OK } from '@/common/code'
 
-axios.defaults.baseURL = baseURL;
+axios.defaults.baseURL = baseURL
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 
 const state = {
@@ -32,21 +33,21 @@ const actions = {
 		}
 
 		Object.keys(urlParams).forEach(k => {
-			const reg = new RegExp(`:${k}`);
+			const reg = new RegExp(`:${k}`)
 
 			url = url.replace(reg, urlParams[k])
 		})
-		proxy[dataType[proxy.method.toUpperCase()]] = params;
+		proxy[dataType[proxy.method.toUpperCase()]] = params
 
 		const response = await axios(Object.assign({}, proxy, {
 			url
-		}));
+		}))
 
-		if (response.status !== 200) {
-			throw Error('服务器异常');
+		if (response.status !== ERR_OK) {
+			throw Error('服务器异常')
 		}
 
-		return response.data;
+		return response.data
 	}
 }
 
