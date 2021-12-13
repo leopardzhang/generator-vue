@@ -23,33 +23,29 @@ module.exports = class extends Generator {
 			this.destinationPath(`${this.props.appName}/`)
 		);
 
-		this.fs.copy(
+		const templates = [
+			'.csscomb.json',
+			'.gitignore',
+			'.editorconfig',
+			'.eslintrc',
+			'.eslintignore',
+			'.jsbeautifyrc',
+			'.stylelintrc'
+		]
 
-			this.templatePath('project/.gitignore'),
+		templates.forEach(item => {
+			this.fs.copy(
 
-			this.destinationPath(`${this.props.appName}/.gitignore`)
+				this.templatePath(`project/${item}`),
 
-		);
+				this.destinationPath(`${this.props.appName}/${item}`)
 
-		this.fs.copy(
-
-			this.templatePath('project/.editorconfig'),
-
-			this.destinationPath(`${this.props.appName}/.editorconfig`)
-
-		);
-
-		this.fs.copy(
-
-			this.templatePath('project/.eslintrc'),
-
-			this.destinationPath(`${this.props.appName}/.eslintrc`)
-
-		);
+			);
+		})
 	}
 
 	end() {
 		console.info(`run -> cd ${this.props.appName}`);
 		console.info(`run -> npm install`);
 	}
-}; 
+};
