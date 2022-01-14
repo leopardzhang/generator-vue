@@ -1,7 +1,7 @@
 import $apiConf from '@/config'
 
 const state = {
-	
+	userInfo: 'textState'
 }
 
 const SET_USERNAME = 'SET_USERNAME'
@@ -52,4 +52,4 @@ export default {
 	mutations,
 	actions,
 	getters
-};
+}
