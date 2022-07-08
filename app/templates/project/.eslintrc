@@ -104,7 +104,7 @@
         "no-multiple-empty-lines": [2, { "max": 3, "maxEOF": 1 }],
 
         // disallow specified syntax
-        "no-restricted-syntax": [2, 'DebuggerStatement', 'LabeledStatement', 'WithStatement'],
+        "no-restricted-syntax": [2, "DebuggerStatement", "LabeledStatement", "WithStatement"],
 
         // disallow dangling underscores in identifiers
         "no-underscore-dangle": 1,
