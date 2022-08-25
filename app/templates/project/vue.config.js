@@ -15,6 +15,7 @@ module.exports = {
 			.set('@common', resolve('src/common'))
 	},
 	css: {
+		extract: false,
 		loaderOptions: {
 			sass: {
 				prependData: `@import "@/common/scss/mixin.scss";
